@@ -103,15 +103,13 @@ body {
   font-size: 1rem;
 }
 
-.logo-mark {
+.logo-img {
   width: 34px;
   height: 34px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 40%;
-  background: radial-gradient(circle at 30% 0%, #ffe082, #f4b41a 55%, #ff9800);
-  box-shadow: 0 0 18px rgba(244, 180, 26, 0.6);
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(244, 180, 26, 0.7);
+  box-shadow: 0 0 12px rgba(244, 180, 26, 0.6);
 }
 
 .logo-text span {
@@ -670,6 +668,39 @@ details p {
   justify-content: center;
   cursor: pointer;
   border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* SCROLL TO TOP BUTTON */
+.scroll-top {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #f4b41a, #ff9800);
+  color: #1b1304;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-med), transform var(--transition-med);
+  z-index: 40;
+}
+
+.scroll-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.scroll-top:hover {
+  transform: translateY(-2px);
 }
 
 /* SIMPLE ANIMATIONS */
