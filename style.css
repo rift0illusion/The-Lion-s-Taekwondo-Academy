@@ -342,9 +342,10 @@ body {
 
 .coach-photo {
   border-radius: 1.4rem;
-  min-height: 220px;
+  width: 100%;
+  aspect-ratio: 3 / 4;   /* ✅ Portrait ratio */
   background-size: cover;
-  background-position: center;
+  background-position: center top; /* better for faces */
   background-color: #111827;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.6);
