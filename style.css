@@ -325,6 +325,48 @@ body {
   color: var(--accent);
 }
 
+/* COACH SECTION */
+.coach-section {
+  margin-top: 3rem;
+}
+
+.coach-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.7fr);
+  gap: 2rem;
+  align-items: center;
+  background: linear-gradient(135deg, #10172c, #050816);
+  border-radius: 1.75rem;
+  padding: 1.6rem 1.8rem;
+  border: 1px solid rgba(244, 180, 26, 0.55);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
+}
+
+.coach-photo {
+  border-radius: 1.4rem;
+  min-height: 220px;
+  background-size: cover;
+  background-position: center;
+  background-color: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.6);
+}
+
+.coach-text h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.3rem;
+}
+
+.coach-title {
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.coach-text p + p {
+  margin-top: 0.6rem;
+}
+
 /* CARDS GRID */
 .cards-grid {
   display: grid;
@@ -405,7 +447,20 @@ body {
 .achievement-card {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.65rem;
+  padding: 0;
+}
+
+.achievement-media img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 1rem 1rem 0 0;
+  display: block;
+}
+
+.achievement-body {
+  padding: 1rem 1.2rem 1.2rem;
 }
 
 .medal-icon {
@@ -416,7 +471,7 @@ body {
 .gallery-grid {
   margin-top: 1.2rem;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.9rem;
 }
 
@@ -437,45 +492,75 @@ body {
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75);
 }
 
+/* OUR CHAMPIONS */
+.champions-grid {
+  margin-top: 1.4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 1rem;
+}
+
+.champion-card {
+  background: var(--bg-elevated);
+  border-radius: 1rem;
+  border: 1px solid var(--border-soft);
+  padding: 0.7rem 0.7rem 0.9rem;
+  text-align: center;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.55);
+}
+
+.champion-photo {
+  width: 100%;
+  height: 130px;
+  border-radius: 0.8rem;
+  background-size: cover;
+  background-position: center;
+  background-color: #111827;
+  margin-bottom: 0.45rem;
+}
+
+.champion-name {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
 /* CONTACT */
 .contact-details p + p {
   margin-top: 0.4rem;
 }
 
 .contact-card {
-  background: var(--bg-elevated);
+  background: radial-gradient(circle at top, rgba(244, 180, 26, 0.15), #050816);
   border-radius: var(--radius-xl);
   padding: 1.5rem 1.6rem;
-  border: 1px solid var(--border-soft);
+  border: 1px solid rgba(244, 180, 26, 0.65);
   box-shadow: var(--shadow-soft);
 }
 
-.contact-form {
+.contact-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.contact-card-text {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.contact-actions {
   display: grid;
   gap: 0.7rem;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.8rem;
 }
 
-.contact-form input,
-.contact-form textarea {
-  border-radius: 0.7rem;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  background: #050816;
-  padding: 0.65rem 0.8rem;
-  color: var(--text-main);
-  font-size: 0.9rem;
-  outline: none;
+.full-width {
+  width: 100%;
+  justify-content: center;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 1px rgba(244, 180, 26, 0.4);
-}
-
-.contact-form textarea {
-  min-height: 80px;
-  resize: vertical;
+.contact-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
 }
 
 /* FAQ */
@@ -615,6 +700,9 @@ details p {
 .section:nth-of-type(7) {
   animation-delay: 0.35s;
 }
+.section:nth-of-type(8) {
+  animation-delay: 0.4s;
+}
 
 @keyframes fadeUp {
   to {
@@ -639,8 +727,11 @@ details p {
   .hero-grid,
   .two-col,
   .cards-grid,
-  .batch-grid,
-  .gallery-grid {
+  .batch-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .coach-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 
@@ -650,6 +741,10 @@ details p {
 
   .cards-grid {
     gap: 1.1rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .gallery-grid img {
@@ -683,5 +778,9 @@ details p {
 
   .nav-toggle {
     display: inline-flex;
+  }
+
+  .coach-grid {
+    padding: 1.3rem 1.2rem;
   }
 }
