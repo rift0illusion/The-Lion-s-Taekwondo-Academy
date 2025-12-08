@@ -73,3 +73,18 @@ if (scrollTopBtn) {
     });
   });
 }
+
+// Image fade-in effect
+const fadeImages = document.querySelectorAll(".img-fade");
+if (fadeImages.length) {
+  fadeImages.forEach((img) => {
+    const addLoaded = () => img.classList.add("loaded");
+
+    if (img.complete) {
+      // already loaded (from cache)
+      addLoaded();
+    } else {
+      img.addEventListener("load", addLoaded);
+    }
+  });
+}
