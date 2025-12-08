@@ -15,14 +15,9 @@ if (navToggle && mainNav) {
   });
 }
 
-// Popup flyer logic
+// Popup flyer logic – SHOW EVERY TIME THE SITE OPENS
 const promoOverlay = document.getElementById("promoOverlay");
 const promoClose = document.getElementById("promoClose");
-
-// Show popup only if not closed before in this browser
-function shouldShowPromo() {
-  return !localStorage.getItem("lions_tkd_promo_closed");
-}
 
 function openPromo() {
   if (promoOverlay) {
@@ -34,14 +29,12 @@ function closePromo() {
   if (promoOverlay) {
     promoOverlay.classList.remove("active");
   }
-  localStorage.setItem("lions_tkd_promo_closed", "1");
 }
 
 if (promoOverlay && promoClose) {
   window.addEventListener("load", () => {
-    if (shouldShowPromo()) {
-      openPromo();
-    }
+    // Always show on page load
+    openPromo();
   });
 
   promoClose.addEventListener("click", closePromo);
@@ -59,4 +52,24 @@ const yearSpan = document.getElementById("year");
 if (yearSpan) {
   const currentYear = new Date().getFullYear();
   yearSpan.textContent = currentYear.toString();
+}
+
+// Scroll to top button
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+if (scrollTopBtn) {
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      scrollTopBtn.classList.add("show");
+    } else {
+      scrollTopBtn.classList.remove("show");
+    }
+  });
+
+  scrollTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
 }
