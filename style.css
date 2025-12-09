@@ -875,4 +875,14 @@ details p {
     padding: 1.3rem 1.2rem;
   }
 }
+/* Gallery Caption */
+.gallery-item {
+  text-align: center;
+}
+
+.gallery-caption {
+  margin-top: 0.35rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
 
