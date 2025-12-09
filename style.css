@@ -960,5 +960,32 @@ details p {
 }
 
 /* ================= LIGHTBOX CSS ENDS HERE ================= */
+/* QUICK GALLERY BUTTON ON HOME PAGE */
+.quick-gallery-btn {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.big-gallery-btn {
+  font-size: 1.1rem;
+  padding: 0.9rem 2.2rem;
+  border-radius: 999px;
+  box-shadow: 0 0 22px rgba(244, 180, 26, 0.55);
+  animation: pulseGlow 2.5s infinite;
+}
+
+/* Soft glowing pulse animation */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(244, 180, 26, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 26px rgba(244, 180, 26, 0.85);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(244, 180, 26, 0.45);
+  }
+}
+
 
 
