@@ -653,6 +653,25 @@ details p {
 }
 
 /* POPUP OVERLAY */
+/* POPUP OVERLAY */
+.promo-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 4, 10, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200; /* above header */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-med);
+}
+
+.promo-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .promo-modal {
   position: relative;
   max-width: min(480px, 90vw);
@@ -696,6 +715,7 @@ details p {
   background: #dc2626;
   transform: scale(1.08);
 }
+
 
 
 /* SCROLL TO TOP BUTTON */
