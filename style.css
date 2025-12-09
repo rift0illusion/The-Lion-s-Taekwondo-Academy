@@ -886,3 +886,79 @@ details p {
   color: var(--text-muted);
 }
 
+/* ================= LIGHTBOX CSS STARTS HERE ================= */
+
+/* LIGHTBOX (click-to-open gallery image) */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 180;
+  transition: opacity var(--transition-med);
+}
+
+.lightbox-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: min(900px, 90vw);
+  max-height: 90vh;
+  padding: 0.5rem;
+  border-radius: 1.2rem;
+  background: #050816;
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(244, 180, 26, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 0.9rem;
+  display: block;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.85);
+  color: #ffffff;
+  font-size: 22px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.lightbox-close:hover {
+  background: #dc2626;
+  transform: scale(1.08);
+}
+
+/* Make gallery images clickable */
+.gallery-grid img {
+  cursor: pointer;
+}
+
+/* ================= LIGHTBOX CSS ENDS HERE ================= */
+
+
