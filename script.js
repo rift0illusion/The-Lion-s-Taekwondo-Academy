@@ -31,21 +31,26 @@ function closePromo() {
   }
 }
 
-if (promoOverlay && promoClose) {
+if (promoOverlay) {
   window.addEventListener("load", () => {
-    // Always show on page load
     openPromo();
   });
 
-  promoClose.addEventListener("click", closePromo);
-
-  // Click outside modal to close
   promoOverlay.addEventListener("click", (e) => {
+    // click on dark background closes
     if (e.target === promoOverlay) {
       closePromo();
     }
   });
 }
+
+if (promoClose) {
+  promoClose.addEventListener("click", (e) => {
+    e.stopPropagation();
+    closePromo();
+  });
+}
+
 
 // Dynamic year in footer
 const yearSpan = document.getElementById("year");
