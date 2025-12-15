@@ -986,6 +986,21 @@ details p {
     box-shadow: 0 0 10px rgba(244, 180, 26, 0.45);
   }
 }
+/* Martial Arts Icons */
+.ma-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f4b41a, #ff9800);
+  color: #1b1304;
+  font-weight: 700;
+  font-size: 0.85rem;
+  box-shadow: 0 6px 18px rgba(244, 180, 26, 0.5);
+}
 
 
 
